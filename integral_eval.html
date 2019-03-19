@@ -1,0 +1,267 @@
+<html> 
+		<body>
+			<head>
+					<title>Integral Evaluator</title>
+					<link rel="stylesheet" type="text/css" href="style.css">
+			</head>
+		<div class = "layout">
+			<div class="title"><h1>Integral Evaluator</h1></div>
+			
+			<div class="r2c1">
+				<p ALIGN=LEFT>
+					<b>This program solves any definite integral of your selection.</b>				
+					<ol>
+						<li>Set up your integral
+						<li>Choose your bounds
+						<li>Press Go!
+					</ol>
+				</p>
+			</div>	
+			<div class = "r3c1">	
+				<p ALIGN=LEFT>
+					<b>Calculated using Riemann Sums. Learn more here:</b>				
+					<ul>
+						<li><a href="https://en.wikipedia.org/wiki/Riemann_sum">Riemann Sums</a>
+						<li><a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus">FTC</a>
+					</ul>
+			</div>
+			
+			
+			<div class = "r24c25">
+				<div class = "calc">
+						<div class ="leftbox">
+							<div class="intbox">
+								<div class = "ibL">
+									&#x222b
+								</div>
+								<div class = "ubound">
+									2
+								</div>
+								<div class = "lbound">
+									1
+								</div>
+							</div>
+						</div>	
+						<div class = "in" id ="box"></div>
+					
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "sin" onClick = "build(sin); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "arcsin" onClick = "build(arcsin); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "&#7464" onClick = "build(pi); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "^" onClick = "build(exp); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "&#8730" onClick = "build(sqrt); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "Delete" onClick = "build(cube); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "Go!" onClick = "build(go); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "cos" onClick = "build(cos); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "arccos" onClick = "build(arccos); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "log" onClick = "build(log); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "ln" onClick = "build(ln); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "(" onClick = "build(op); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = ")" onClick = "build(clo); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "C" onClick = "build(C); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "tan" onClick = "build(tan); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "arctan" onClick = "build(arctan); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "e" onClick = "build(e); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "1" onClick = "build(1); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "2" onClick = "build(2); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "3" onClick = "build(3); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "x" onClick = "build(x); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "+" onClick = "build(plus); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "-" onClick = "build(minus); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "x&sup2" onClick = "build(square); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "4" onClick = "build(4); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "5" onClick = "build(5); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "6" onClick = "build(6); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "." onClick = "build(point); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "/" onClick = "build(divide); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "*" onClick = "build(multiply); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "x&sup3" onClick = "build(cube); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "7" onClick = "build(7); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "8" onClick = "build(8); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "9" onClick = "build(9); update();" />
+							</form>
+					</div>
+					<div class ="btn">	
+							<form>
+								<input type= "button" value = "0" onClick = "build(0); update();" />
+							</form>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</div>
+			</div>
+
+
+
+			
+	
+		
+		
+		
+		
+		
+			
+		</div>
+		
+		<script src="script.js"></script>
+		</body>
+</html>
