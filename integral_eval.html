@@ -17,8 +17,8 @@
 					</ol>
 				</p>
 			</div>	
-			<div class = "r3c1">	
-				<p ALIGN=LEFT>
+			<div class="r3c1">	
+				<p ALIGN=LEFT id ="Test">
 					<b>Calculated using Riemann Sums. Learn more here:</b>				
 					<ul>
 						<li><a href="https://en.wikipedia.org/wiki/Riemann_sum">Riemann Sums</a>
@@ -27,7 +27,7 @@
 			</div>
 			
 			
-			<div class = "r24c25">
+			<div class="r24c25">
 				<div class = "calc">
 						<div class ="leftbox">
 							<div class="intbox">
@@ -35,10 +35,14 @@
 									&#x222b
 								</div>
 								<div class = "ubound">
-									2
+									<form>
+										<input type= "text" id ="uB" value = "1"/>
+									</form>									
 								</div>
 								<div class = "lbound">
-									1
+									<form>
+										<input type= "text" id ="lB" value = "0"/>
+									</form>
 								</div>
 							</div>
 						</div>	
@@ -46,210 +50,185 @@
 					
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "sin" onClick = "build(sin); update();" />
+								<input type= "button" value = "sin" onClick = "build(sin, sinO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "arcsin" onClick = "build(arcsin); update();" />
+								<input type= "button" value = "arcsin" onClick = "build(arcsin, arcsinO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "&#7464" onClick = "build(pi); update();" />
+								<input type= "button" value = "&#7464" onClick = "build(pi, piO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "^" onClick = "build(exp); update();" />
+								<input type= "button" value = "^" onClick = "build(exp, expO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "&#8730" onClick = "build(sqrt); update();" />
+								<input type= "button" value = "&#8730" onClick = "build(sqrt, sqrtO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "Delete" onClick = "build(cube); update();" />
+								<input type= "button" value = "Delete" onClick = "back(); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "Go!" onClick = "build(go); update();" />
+								<input type= "button" value = "Go!" onClick = "ev();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "cos" onClick = "build(cos); update();" />
+								<input type= "button" value = "cos" onClick = "build(cos, cosO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "arccos" onClick = "build(arccos); update();" />
+								<input type= "button" value = "arccos" onClick = "build(arccos, arccosO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "log" onClick = "build(log); update();" />
+								<input type= "button" value = "log" onClick = "build(log, logO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "ln" onClick = "build(ln); update();" />
+								<input type= "button" value = "ln" onClick = "build(ln, lnO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "(" onClick = "build(op); update();" />
+								<input type= "button" value = "(" onClick = "build(op, op); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = ")" onClick = "build(clo); update();" />
+								<input type= "button" value = ")" onClick = "build(clo, clo); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "C" onClick = "build(C); update();" />
+								<input type= "button" value = "C" onClick = "clean(); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "tan" onClick = "build(tan); update();" />
+								<input type= "button" value = "tan" onClick = "build(tan, tanO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "arctan" onClick = "build(arctan); update();" />
+								<input type= "button" value = "arctan" onClick = "build(arctan, arctanO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "e" onClick = "build(e); update();" />
+								<input type= "button" value = "e" onClick = "build(e, eO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "1" onClick = "build(1); update();" />
+								<input type= "button" value = "1" onClick = "build(1,1); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "2" onClick = "build(2); update();" />
+								<input type= "button" value = "2" onClick = "build(2,2); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "3" onClick = "build(3); update();" />
+								<input type= "button" value = "3" onClick = "build(3,3); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "x" onClick = "build(x); update();" />
+								<input type= "button" value = "x" onClick = "build(x, xO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "+" onClick = "build(plus); update();" />
+								<input type= "button" value = "+" onClick = "build(plus, plus); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "-" onClick = "build(minus); update();" />
+								<input type= "button" value = "-" onClick = "build(minus, minus); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "x&sup2" onClick = "build(square); update();" />
+								<input type= "button" value = "x&sup2" onClick = "build(square, squareO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "4" onClick = "build(4); update();" />
+								<input type= "button" value = "4" onClick = "build(4,4); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "5" onClick = "build(5); update();" />
+								<input type= "button" value = "5" onClick = "build(5,5); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "6" onClick = "build(6); update();" />
+								<input type= "button" value = "6" onClick = "build(6,6); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "." onClick = "build(point); update();" />
+								<input type= "button" value = "." onClick = "build(point, point); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "/" onClick = "build(divide); update();" />
+								<input type= "button" value = "/" onClick = "build(divide, divide); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "*" onClick = "build(multiply); update();" />
+								<input type= "button" value = "*" onClick = "build(times, times); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "x&sup3" onClick = "build(cube); update();" />
+								<input type= "button" value = "x&sup3" onClick = "build(cube, cubeO); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "7" onClick = "build(7); update();" />
+								<input type= "button" value = "7" onClick = "build(7, 7); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "8" onClick = "build(8); update();" />
+								<input type= "button" value = "8" onClick = "build(8, 8); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "9" onClick = "build(9); update();" />
+								<input type= "button" value = "9" onClick = "build(9, 9); update();" />
 							</form>
 					</div>
 					<div class ="btn">	
 							<form>
-								<input type= "button" value = "0" onClick = "build(0); update();" />
+								<input type= "button" value = "0" onClick = "build(0, 0); update();" />
 							</form>
 					</div>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-				</div>
+				</div>	
 			</div>
-
+			<div class = "r2c5" id = "output">
+				0
+			</div>
+				
 
 
 			
