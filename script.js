@@ -8,7 +8,7 @@
 	var minus = "-";
 	var divide = "/";
 	var times = "*";
-	var pi = "&#7464 ", piO = "Math.pi()";
+	var pi = "&#7464 ", piO = "Math.PI";
 	var log = "log(", logO = "Math.log10(";
 	var e = "e^(", eO = "Math.exp(";
 	var exp = "^", expO = "**";
@@ -28,28 +28,27 @@
 
 
 	function build(out, inn){
-		
 		clicksOut.push(out);
 		if(!clicksIn.length < 1){
-			if(!isOperator(clicksIn[clicksIn.length-1]) &&(( canBeCoed(inn) || (Number.isInteger(inn)) && clicksIn[clicksIn.length-1] == ")"))){
+			if(!isOperator(clicksIn[clicksIn.length-1]) &&(( canBeCoed(inn) || ((Number.isInteger(inn)) && (clicksIn[clicksIn.length-1]== ")" || clicksIn[clicksIn.length-1]== "Math.PI" ))))){
 				inn = "*" + inn;
 			}
 		}
-	
 		clicksIn.push(inn);
+		
 	}
 	
 	
 	function update(){
 		expressionOut = clicksOut.join("");
 		expressionIn = clicksIn.join("");
-		document.getElementById('box').innerHTML = expressionIn + "<b>dx</b>";
+		document.getElementById('box').innerHTML = expressionOut + "<b>dx</b>";
 	}
 	
 	function back(){
 		clicksOut.pop();
 		clicksIn.pop();
-		document.getElementById('output').innerHTML = 0;
+		document.getElementById('output').innerHTML = "0.00";
 	}
 	
 	function ev(){
@@ -74,6 +73,7 @@
 			refArray = cloneArray(clicksIn);
 			
 			replaceVariable(refArray, i);
+			
 			expression = refArray.join("");	
 			answer += eval(expression) * increment;
 			i -= increment;
@@ -87,7 +87,9 @@
 	function clean(){
 		clicksIn = [];
 		clicksOut = [];
-		document.getElementById('output').innerHTML = 0;
+		document.getElementById('output').innerHTML = "0.00";
+		document.getElementById('lB').value = 0;
+		document.getElementById('uB').value = 1;
 	}
 	function isOperator(k){
 		if(	!Number.isInteger(k)){
@@ -97,9 +99,9 @@
 	}
 	
 	function canBeCoed(k){
-		if( k === "x" || k === "(") return true;
+		if(k === "x" || k === "(") return true;
 		if(k.length > 3){
-			if(k.substring(0,4) === "Math" || k.substring(0,2) === "&#") return true;
+			if(k.substring(0,4) === "Math") return true;
 		}
 		return false;
 	}
@@ -107,6 +109,7 @@
 	function replaceVariable(inputArray, value){
 		for(i = 0; i<inputArray.length; i++){
 			if(inputArray[i] === "x") inputArray[i] = value; 
+			if(inputArray[i] === "*x") inputArray[i] = "*" + value;
 		}
 			
 	}
